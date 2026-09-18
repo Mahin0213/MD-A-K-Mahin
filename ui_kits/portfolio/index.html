@@ -1,0 +1,80 @@
+<!-- @dsCard group="Portfolio site" viewport="1440x900" name="Portfolio — full page" subtitle="Hero, about, services, work, process, results, contact — click-through" -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Md A K Mahin — SEO Expert &amp; AI Web Builder</title>
+<meta name="description" content="Helping businesses grow with search-first strategy and AI-powered websites. SEO audits, technical SEO, content strategy, and fast AI-built sites.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Md A K Mahin — SEO Expert &amp; AI Web Builder">
+<meta property="og:description" content="I build websites that rank, convert, and grow.">
+<meta property="og:image" content="/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://example.com/">
+<link rel="stylesheet" href="../../styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Md A K Mahin","description":"SEO Expert and AI Web Builder","areaServed":"Worldwide","address":{"@type":"PostalAddress","addressCountry":"GB"},"email":"akmahin068@gmail.com","telephone":"+44 7487 558646","url":"https://example.com/","founder":{"@type":"Person","name":"Md A K Mahin","jobTitle":"SEO Expert & AI Web Builder","email":"akmahin068@gmail.com","telephone":"+44 7487 558646"},"sameAs":["https://www.linkedin.com/","https://x.com/","https://github.com/"]}</script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+html{scroll-behavior:smooth}
+.reveal{opacity:0;transform:translateY(var(--reveal-offset));transition:var(--t-reveal)}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head><body>
+<div class="ds-grain"></div>
+<div id="root"></div>
+<script type="text/babel" src="Nav.jsx"></script>
+<script type="text/babel" src="HeroCanvas.jsx"></script>
+<script type="text/babel" src="HomeTop.jsx"></script>
+<script type="text/babel" src="HomeBottom.jsx"></script>
+<script type="text/babel" src="CaseStudy.jsx"></script>
+<script type="text/babel">
+const { Dialog, Button } = window.MahinDesignSystem_5e3929;
+
+function useReveal(dep) {
+  React.useEffect(() => {
+    const els = document.querySelectorAll(".reveal:not(.in)");
+    const io = new IntersectionObserver((es) => es.forEach((e, n) => {
+      if (e.isIntersecting) { e.target.style.transitionDelay = (n * 70) + "ms"; e.target.classList.add("in"); io.unobserve(e.target); }
+    }), { rootMargin: "-8% 0px" });
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [dep]);
+}
+
+function App() {
+  const [view, setView] = React.useState({ name: "home" });
+  const [sent, setSent] = React.useState(false);
+  useReveal(view.name);
+  const navigate = (id) => {
+    if (view.name !== "home") { setView({ name: "home" }); setTimeout(() => document.getElementById(id) && window.scrollTo({ top: document.getElementById(id).offsetTop - 72, behavior: "smooth" }), 60); return; }
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: id === "top" ? 0 : el.offsetTop - 72, behavior: "smooth" });
+  };
+  const openCase = (p) => { setView({ name: "case", project: p }); window.scrollTo({ top: 0 }); };
+  return (
+    <>
+      <window.Nav onNavigate={navigate} active={view.name === "case" ? "work" : null} />
+      {view.name === "home" ? (
+        <main>
+          <window.Hero onNavigate={navigate} />
+          <div className="reveal"><window.About /></div>
+          <div className="reveal"><window.Services /></div>
+          <div className="reveal"><window.Work onOpenCase={openCase} /></div>
+          <div className="reveal"><window.Process /></div>
+          <div className="reveal"><window.Results /></div>
+          <div className="reveal"><window.Contact onSubmit={() => setSent(true)} /></div>
+        </main>
+      ) : (
+        <main><window.CaseStudy project={view.project} onBack={() => { setView({ name: "home" }); setTimeout(() => navigate("work"), 40); }} /></main>
+      )}
+      <window.Footer onNavigate={navigate} />
+      <Dialog open={sent} title="Enquiry sent" onClose={() => setSent(false)} footer={<Button size="sm" onClick={() => setSent(false)}>Done</Button>}>
+        Thanks — I reply within one working day. This is a demo form; wire it to your own endpoint before launch.
+      </Dialog>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body></html>

@@ -1,0 +1,4 @@
+/* Fonts are loaded from Google Fonts. No vendor font binaries were supplied with
+   the brief, so these are the chosen (not substituted) brand faces:
+   Archivo (display, wide/expanded widths) + IBM Plex Sans + IBM Plex Mono. */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,100..125,400..900;1,100..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300..600;1,400&display=swap");

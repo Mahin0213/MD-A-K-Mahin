@@ -1,0 +1,21 @@
+:root{
+  /* Shadows are nearly absent — depth comes from hairlines and value shifts.
+     Only lifted overlays and the accent glow use them. */
+  --shadow-none:none; /* @kind other */
+  --shadow-overlay:0 24px 80px -12px rgba(0,0,0,.72); /* @kind other */
+  --shadow-lift:0 1px 0 0 var(--border-soft); /* @kind other */
+  --glow-accent:0 0 0 1px var(--lime-500),0 0 32px -8px rgba(200,255,0,.45); /* @kind other */
+
+  --blur-veil:blur(18px); /* @kind other */
+  --blur-nav:saturate(140%) blur(14px); /* @kind other */
+  --veil-nav:rgba(10,10,11,.72); /* @kind other */
+  --veil-scrim:linear-gradient(to top,rgba(5,5,6,.92) 0%,rgba(5,5,6,.55) 45%,rgba(5,5,6,0) 100%); /* @kind other */
+
+  /* grain: 1px SVG noise, tiled, very low opacity, fixed over the page */
+  --grain-url:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E"); /* @kind other */
+  --grain-opacity:.045; /* @kind other */
+
+  --ring-focus:0 0 0 2px var(--ink-900),0 0 0 4px var(--focus-ring); /* @kind other */
+  --img-filter:grayscale(1) contrast(1.06) brightness(.86); /* @kind other */
+  --img-filter-hover:grayscale(.15) contrast(1.02) brightness(.98); /* @kind other */
+}

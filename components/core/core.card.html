@@ -1,0 +1,32 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Core — buttons, tags, labels" subtitle="Actions, pills, numbered eyebrows, rules" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{padding:28px 32px;background:var(--bg-page)}.row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Tag, SectionLabel, Divider } = window.MahinDesignSystem_5e3929;
+ReactDOM.createRoot(document.getElementById('root')).render(<>
+  <div className="row">
+    <Button variant="primary" icon="arrow-up-right">Start a project</Button>
+    <Button variant="secondary">View my work</Button>
+    <Button variant="ghost" icon="arrow-right">All case studies</Button>
+    <Button variant="primary" size="sm">Send</Button>
+    <Button variant="secondary" disabled>Disabled</Button>
+  </div>
+  <div className="row">
+    <IconButton icon="arrow-left" label="Prev" /><IconButton icon="arrow-right" label="Next" />
+    <IconButton icon="arrow-up-right" label="Open" variant="solid" />
+    <Tag>Technical SEO</Tag><Tag>Content</Tag><Tag tone="accent">Sample project</Tag><Tag tone="solid">Available</Tag>
+  </div>
+  <Divider />
+  <div className="row" style={{marginTop:22,gap:48}}>
+    <SectionLabel index="01">Selected work</SectionLabel>
+    <SectionLabel index="04">Process</SectionLabel>
+    <SectionLabel>Available worldwide</SectionLabel>
+  </div>
+  <Divider tone="accent" />
+</>);
+</script></body></html>
