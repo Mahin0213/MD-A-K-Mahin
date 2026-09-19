@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 356 356" role="img" aria-label="AK Elevate Digital">
+  <defs>
+    <linearGradient id="rise" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#00B6AE"></stop>
+      <stop offset="1" stop-color="#42D6B5"></stop>
+    </linearGradient>
+  </defs>
+  <path d="M178 0C276 0 356 80 356 178s-80 178-178 178S0 276 0 178 80 0 178 0Z" fill="#0B1F3A"></path>
+  <path d="M75 249 156 89c5-10 20-10 25 0l39 76 37-53-2 37 57-61-60 6 24 17-61 88c-7 10-21 9-27-3l-40-77-57 112Z" fill="url(#rise)"></path>
+  <path d="M97 251h168" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".92"></path>
+</svg>
