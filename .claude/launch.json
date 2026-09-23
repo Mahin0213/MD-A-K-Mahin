@@ -4,8 +4,8 @@
     {
       "name": "mahin-design-site",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "4173", "--directory", "site"],
-      "port": 4173
+      "runtimeArgs": ["-m", "http.server", "4183", "--directory", "site"],
+      "port": 4183
     }
   ]
 }
